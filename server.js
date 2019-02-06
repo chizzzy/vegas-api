@@ -1,8 +1,6 @@
 const nodemailer = require('nodemailer');
-const http = require('http');
 const bodyParser = require('body-parser')
 const express = require('express')
-const cors = require('cors')
 const app = express();
 const userData = require('./userdata');
 
@@ -21,14 +19,13 @@ var transporter = nodemailer.createTransport({
  });
  const mailOptions = {
   from: 'vegas.lazurnoe@gmail.com', // sender address
-  to: 'mgandrey99@gmail.com', // list of receivers
-  subject: 'Сообщение от пансионата Vegas', // Subject line
+  to: 'mgandrey99@gmail.com', //receiver
+  subject: 'Сообщение от пансионата Vegas',
   html: ``
 };
 
 app.listen(4000, function () {
   console.log('Email sender is listening on port 4000');
-  console.log(userData);
 });
 
 let data = ''
